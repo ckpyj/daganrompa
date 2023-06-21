@@ -22,7 +22,8 @@ class UsersModel(models.Model):
 
 
 class HeroListModel(models.Model):
-    pass
+    HEROES = ()
+    hero = models.CharField(choices=HEROES)
 
 
 class GameModel(models.Model):
