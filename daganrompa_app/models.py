@@ -26,4 +26,13 @@ class HeroListModel(models.Model):
 
 
 class GameModel(models.Model):
-    pass
+    game_name = models.CharField(max_length=30)
+    game_date = models.DateField()
+    game_time = models.DateTimeField()
+    game_master = models.CharField(max_length=30)
+    game_admin = models.CharField(max_length=30)
+    streamer = models.CharField(max_length=30)
+    game_tag = models.CharField(max_length=100)
+    ban_hero = models.CharField(max_length=100)
+    game_map = models.CharField(max_length=30)
+    comments = models.CharField(max_length=100)
