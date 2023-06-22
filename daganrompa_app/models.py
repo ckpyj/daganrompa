@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class UsersModel(models.Model):
@@ -14,7 +15,7 @@ class UsersModel(models.Model):
     email = models.EmailField(null=True)
     discord = models.CharField(max_length=30)
     steam = models.URLField()
-    total_game = models.IntegerField()
+    total_game = models.IntegerField(default=0, validators=[MinValueValidator(0)])
     history_game = models.IntegerField()
     # main_hero
     ban = models.CharField(max_length=1, choices=BAN, default="F")
