@@ -17,8 +17,8 @@ class UsersModel(models.Model):
     total_game = models.IntegerField()
     history_game = models.IntegerField()
     # main_hero
-    ban = models.CharField(max_length=1, choices=BAN)
-    vip = models.CharField(max_length=1, choices=VIP)
+    ban = models.CharField(max_length=1, choices=BAN, default="F")
+    vip = models.CharField(max_length=1, choices=VIP, default="F")
 
     def save(self, *args, **kwargs):
         super(UsersModel, self).save(*args, **kwargs)
