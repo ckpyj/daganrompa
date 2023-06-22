@@ -26,6 +26,7 @@ class UsersModel(models.Model):
     def __str__(self):
         return f'{self.name} | Discord: {self.discord} | GAMES: {self.total_game}'
 
+
 class HeroListModel(models.Model):
     HEROES = (
         ('Макото Наэги', 'Макото Наэги'),
@@ -86,7 +87,13 @@ class HeroListModel(models.Model):
         ('Оки Ноксо', 'Оки Ноксо'),
 
     )
-    hero = models.CharField(max_length=10, choices=HEROES)
+    hero = models.CharField(max_length=24, choices=HEROES)
+
+    def save(self, *args, **kwargs):
+        super(HeroListModel, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return f'{self.HEROES}'
 
 
 class GameModel(models.Model):
