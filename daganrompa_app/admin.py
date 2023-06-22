@@ -6,14 +6,14 @@ admin.site.register(UsersModel)
 admin.site.register(HeroListModel)
 admin.site.register(GameModel)
 
-@admin.register(UsersModel)
-class UsersModelAdmin(admin.ModelAdmin):
-    pass
 
-@admin.register(HeroListModel)
+class UsersModelAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+
 class HeroListModelAdmin(admin.ModelAdmin):
     pass
 
-@admin.register(GameModel)
+
 class GameModelAdmin(admin.ModelAdmin):
     pass
