@@ -12,8 +12,8 @@ class UsersModelAdmin(admin.ModelAdmin):
 
 
 class HeroListModelAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['HEROES']
 
 
 class GameModelAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['game_name', 'game_time']
