@@ -99,7 +99,8 @@ class HeroListModel(models.Model):
 
 class GameModel(models.Model):
     game_name = models.CharField(max_length=30)
-    game_time = models.DateTimeField()
+    game_title = models.CharField(max_length=30)
+    game_time = models.DateTimeField(null=True)
     game_master = models.CharField(max_length=30)
     game_admin = models.CharField(max_length=30)
     streamer = models.CharField(max_length=30)
